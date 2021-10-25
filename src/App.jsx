@@ -9,7 +9,7 @@ const App = () => {
 				<mesh>
 					<ambientLight intensity={0.5} position={[4, 7, 7]} />
 					<directionalLight color='white' position={[2, 5, 5]} />
-					<sphereGeometry args={[1, 16, 16]} />
+					<sphereGeometry args={[1, 32, 32]} />
 					<meshStandardMaterial color={"yellow"} />
 					<OrbitControls
 						autoRotate
