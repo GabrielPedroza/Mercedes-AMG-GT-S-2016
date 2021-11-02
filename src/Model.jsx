@@ -4,6 +4,7 @@ import { useGLTF } from "@react-three/drei"
 export default function Model(props) {
 	const group = useRef()
 	const { nodes, materials } = useGLTF("/AMG.gltf")
+
 	return (
 		<group ref={group} {...props} dispose={null}>
 			<group
