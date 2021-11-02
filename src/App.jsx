@@ -1,16 +1,16 @@
-import React from "react"
+import React, { Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
+import { OrbitControls, Stars } from "@react-three/drei"
+import Model from "./Model"
 
 const App = () => {
 	return (
 		<div id='canvas-container'>
 			<Canvas dpr={[1, 2]} camera={{ position: [-10, 0, 0], fov: 35 }}>
-				<mesh>
+				<Suspense fallback={null}>
 					<ambientLight intensity={0.5} position={[4, 7, 7]} />
 					<directionalLight color='white' position={[2, 5, 5]} />
-					<sphereGeometry args={[1, 32, 32]} />
-					<meshStandardMaterial color={"yellow"} />
+					<Model />
 					<OrbitControls
 						autoRotate
 						enablePan={true}
@@ -20,7 +20,8 @@ const App = () => {
 						maxPolarAngle={Math.PI / 2.8}
 						enableDamping={true}
 					/>
-				</mesh>
+					<Stars />
+				</Suspense>
 			</Canvas>
 		</div>
 	)
