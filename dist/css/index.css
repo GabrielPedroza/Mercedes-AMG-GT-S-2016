@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: #202025;
+}
+
+#canvas-container {
+  width: 100vw;
+  height: 100vh;
+}
+/*# sourceMappingURL=index.css.map */

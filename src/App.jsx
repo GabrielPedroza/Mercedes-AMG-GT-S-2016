@@ -1,28 +1,42 @@
 import React, { Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Stars } from "@react-three/drei"
+import { OrbitControls, Stars, Loader } from "@react-three/drei"
 import Model from "./Model"
 
 const App = () => {
 	return (
 		<div id='canvas-container'>
-			<Canvas dpr={[1, 2]} camera={{ position: [-10, 0, 0], fov: 35 }}>
+			<Canvas
+				frameloop='demand'
+				dpr={[1, 2]}
+				camera={{ position: [-10, 0, 0], fov: 45 }}>
+				<color attach={"background"} args={["#101010"]} />
+				<spotLight
+					color='white'
+					intensity={0.7}
+					position={[0, 3, 0]}
+					penumbra={1}
+				/>
+				<ambientLight intensity={1} color={"white"} />
 				<Suspense fallback={null}>
-					<ambientLight intensity={0.5} position={[4, 7, 7]} />
-					<directionalLight color='white' position={[2, 5, 5]} />
 					<Model />
+					<mesh scale={100} rotation-x={-Math.PI / 2}>
+						<planeGeometry />
+						<meshStandardMaterial color={"#101010"} />
+					</mesh>
 					<OrbitControls
 						autoRotate
 						enablePan={true}
 						enableZoom={false}
 						enableRotate={true}
-						minPolarAngle={Math.PI / 2.8}
-						maxPolarAngle={Math.PI / 2.8}
+						minPolarAngle={Math.PI / 2.1}
+						maxPolarAngle={Math.PI / 2.1}
 						enableDamping={true}
 					/>
-					<Stars />
+					<Stars count={25000} />
 				</Suspense>
 			</Canvas>
+			<Loader />
 		</div>
 	)
 }
