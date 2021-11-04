@@ -35,7 +35,7 @@ const App = () => {
 						autoRotate
 						enablePan={true}
 						enableZoom={false}
-						enableRotate={true}
+						enableRotate={false}
 						minPolarAngle={Math.PI / 2.1}
 						maxPolarAngle={Math.PI / 2.1}
 						enableDamping={true}
