@@ -5,7 +5,7 @@ export default function Model(props) {
 	const group = useRef()
 	const { scene, nodes, materials } = useGLTF("/AMG.gltf")
 
-	// useLayoutEffect(() => {
+	// useLayoutEffect(() => {     This is not necessary (any type of traversing of the model itself ) because of https://gltf.pmnd.rs/
 	// 	scene.traverse(
 	// 		(obj) =>
 	// 			obj.type === "Mesh" && (obj.receiveShadow = obj.castShadow = true)
@@ -18,7 +18,7 @@ export default function Model(props) {
 	// }, [scene, nodes, materials])
 
 	return (
-		<group ref={group} {...props} dispose={null}>
+		<group ref={group} {...props} dispose={null} castShadow>
 			<group
 				position={[1.56, 0.35, 0]}
 				rotation={[0, 0, -Math.PI / 2]}

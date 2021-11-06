@@ -1,16 +1,11 @@
 import React, { Suspense } from "react"
 import { Canvas, render, events } from "@react-three/fiber"
-import {
-	OrbitControls,
-	Stars,
-	Loader,
-	Stage,
-	Environment,
-} from "@react-three/drei"
+import { OrbitControls, Stars, Loader } from "@react-three/drei"
 import Model from "./Model"
 import Floor from "./Floor"
 
 const App = () => {
+	/* Watches for resize of the viewport */
 	window.addEventListener("resize", () =>
 		render(<mesh />, document.querySelector("canvas"), {
 			events,
