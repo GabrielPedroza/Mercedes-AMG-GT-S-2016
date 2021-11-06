@@ -1,7 +1,14 @@
 import React, { Suspense } from "react"
 import { Canvas, render, events } from "@react-three/fiber"
-import { OrbitControls, Stars, Loader } from "@react-three/drei"
+import {
+	OrbitControls,
+	Stars,
+	Loader,
+	Stage,
+	Environment,
+} from "@react-three/drei"
 import Model from "./Model"
+import Floor from "./Floor"
 
 const App = () => {
 	window.addEventListener("resize", () =>
@@ -16,32 +23,30 @@ const App = () => {
 			<Canvas
 				frameloop='demand'
 				dpr={[1, 2]}
-				camera={{ position: [-10, 0, 0], fov: 45 }}>
+				camera={{ position: [-10, 0, 0], fov: 35 }}>
 				<color attach={"background"} args={["#101010"]} />
+				<ambientLight intensity={3} />
 				<spotLight
-					color='white'
-					intensity={0.7}
-					position={[0, 3, 0]}
+					intensity={5}
 					penumbra={1}
+					position={[0, 2, 0]}
+					castShadow
+					color='white'
 				/>
-				<ambientLight intensity={1} color={"white"} />
 				<Suspense fallback={null}>
 					<Model />
-					<mesh scale={100} rotation-x={-Math.PI / 2}>
-						<planeGeometry />
-						<meshStandardMaterial color={"#101010"} />
-					</mesh>
-					<OrbitControls
-						autoRotate
-						enablePan={true}
-						enableZoom={false}
-						enableRotate={false}
-						minPolarAngle={Math.PI / 2.1}
-						maxPolarAngle={Math.PI / 2.1}
-						enableDamping={true}
-					/>
-					<Stars count={25000} />
 				</Suspense>
+				<Floor />
+				<OrbitControls
+					autoRotate
+					enablePan={false}
+					enableZoom={false}
+					enableRotate={true}
+					minPolarAngle={Math.PI / 2.6}
+					maxPolarAngle={Math.PI / 2.6}
+					enableDamping={true}
+				/>
+				<Stars count={25000} />
 			</Canvas>
 			<Loader />
 		</div>

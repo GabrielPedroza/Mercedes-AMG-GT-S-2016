@@ -3,7 +3,19 @@ import { useGLTF } from "@react-three/drei"
 
 export default function Model(props) {
 	const group = useRef()
-	const { nodes, materials } = useGLTF("/AMG.gltf")
+	const { scene, nodes, materials } = useGLTF("/AMG.gltf")
+
+	// useLayoutEffect(() => {
+	// 	scene.traverse(
+	// 		(obj) =>
+	// 			obj.type === "Mesh" && (obj.receiveShadow = obj.castShadow = true)
+	// 	)
+	// 	Object.assign(nodes.平面005.geometry, {
+	// 		metalness: 1,
+	// 		roughness: 0.4,
+	// 		color: new THREE.Color("black"),
+	// 	})
+	// }, [scene, nodes, materials])
 
 	return (
 		<group ref={group} {...props} dispose={null}>
@@ -291,60 +303,80 @@ export default function Model(props) {
 					receiveShadow
 					geometry={nodes.平面005.geometry}
 					material={materials["マテリアル.260"]}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes.平面005_1.geometry}
 					material={materials["マテリアル.238"]}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes.平面005_2.geometry}
 					material={materials["マテリアル.221"]}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes.平面005_3.geometry}
 					material={materials["マテリアル.220"]}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes.平面005_4.geometry}
 					material={materials["マテリアル.005"]}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes.平面005_5.geometry}
 					material={materials.マテリアル}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes.平面005_6.geometry}
 					material={materials["マテリアル.014"]}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes.平面005_7.geometry}
 					material={materials["マテリアル.013"]}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes.平面005_8.geometry}
 					material={materials["マテリアル.015"]}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes.平面005_9.geometry}
 					material={materials["マテリアル.011"]}
+					material-metalness={0.25}
+					material-roughness={0}
 				/>
 			</group>
 			<mesh
