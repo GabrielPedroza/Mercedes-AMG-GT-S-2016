@@ -1,6 +1,7 @@
 import React, { Suspense } from "react"
 import { Canvas, render, events } from "@react-three/fiber"
-import { OrbitControls, Stars, Loader } from "@react-three/drei"
+import { OrbitControls, Stars, Loader, Html } from "@react-three/drei"
+// import AnimatedText from "./Text"
 import Model from "./Model"
 import Floor from "./Floor"
 
@@ -28,6 +29,7 @@ const App = () => {
 					castShadow
 					color='white'
 				/>
+				{/* <Text /> */}
 				<Suspense fallback={null}>
 					<Model />
 				</Suspense>

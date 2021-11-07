@@ -20,4 +20,39 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 5.5em;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  width: 100%;
+  z-index: 1000;
+  margin: 0 auto;
+  animation-name: Appear;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.text1 {
+  transform: translate(100px, 25px);
+}
+
+.text2 {
+  transform: translate(250px, 650px);
+}
+
+@keyframes Appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=index.css.map */

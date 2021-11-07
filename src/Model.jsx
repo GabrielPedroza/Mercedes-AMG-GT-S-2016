@@ -1,21 +1,21 @@
 import React, { useRef } from "react"
 import { useGLTF } from "@react-three/drei"
 
+// useLayoutEffect(() => {     This is not necessary (any type of traversing of the model itself ) because of https://gltf.pmnd.rs/
+// 	scene.traverse(
+// 		(obj) =>
+// 			obj.type === "Mesh" && (obj.receiveShadow = obj.castShadow = true)
+// 	)
+// 	Object.assign(nodes.平面005.geometry, {
+// 		metalness: 1,
+// 		roughness: 0.4,
+// 		color: new THREE.Color("black"),
+// 	})
+// }, [scene, nodes, materials])
+
 export default function Model(props) {
 	const group = useRef()
 	const { scene, nodes, materials } = useGLTF("/AMG.gltf")
-
-	// useLayoutEffect(() => {     This is not necessary (any type of traversing of the model itself ) because of https://gltf.pmnd.rs/
-	// 	scene.traverse(
-	// 		(obj) =>
-	// 			obj.type === "Mesh" && (obj.receiveShadow = obj.castShadow = true)
-	// 	)
-	// 	Object.assign(nodes.平面005.geometry, {
-	// 		metalness: 1,
-	// 		roughness: 0.4,
-	// 		color: new THREE.Color("black"),
-	// 	})
-	// }, [scene, nodes, materials])
 
 	return (
 		<group ref={group} {...props} dispose={null} castShadow>
@@ -305,6 +305,8 @@ export default function Model(props) {
 					material={materials["マテリアル.260"]}
 					material-metalness={0.25}
 					material-roughness={0}
+					// receiveShadow
+					// castShadow
 				/>
 				<mesh
 					castShadow
