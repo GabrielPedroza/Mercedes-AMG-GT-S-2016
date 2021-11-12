@@ -23,7 +23,9 @@ Your app is ready to be deployed!
 No eject needed ❌ Snowpack guarantees zero lock-in, and CSA strives for the same.
 
 ## Contributing 😊
-Pull requests are welcome ✅ For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome ✅ For major changes, please open an issue first to discuss what you would like to change. 
+
+> Project Status: Completed🤓
 
 **For the best production performance:** Add a build bundler plugin like [@snowpack/plugin-webpack](https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack) or [snowpack-plugin-rollup-bundle](https://github.com/ParamagicDev/snowpack-plugin-rollup-bundle) to your `snowpack.config.mjs` config file.
 
