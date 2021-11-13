@@ -34,19 +34,52 @@ body {
 }
 
 .text1 {
-  transform: translate(100px, 25px);
+  transform: translate(100px, 3vh);
 }
 
 .text2 {
-  transform: translate(250px, 650px);
+  transform: translate(250px, 85vh);
 }
 
-@media (max-width: 450px) {
+@media screen and (min-width: 200px) and (max-width: 768px) {
+  .text {
+    width: 90%;
+    font-size: 3rem;
+    text-align: center;
+  }
   .text1 {
-    color: black;
+    transform: translate(25px, 5vh);
   }
   .text2 {
-    color: black;
+    transform: translate(25px, 80vh);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .text {
+    width: 100%;
+    font-size: 4rem;
+    text-align: center;
+  }
+  .text1 {
+    transform: translate(0px, 5vh);
+  }
+  .text2 {
+    transform: translate(0px, 85vh);
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  .text {
+    width: 100%;
+    font-size: 5rem;
+    text-align: center;
+  }
+  .text1 {
+    transform: translate(10px, 5vh);
+  }
+  .text2 {
+    transform: translate(10px, 85vh);
   }
 }
 /*# sourceMappingURL=index.css.map */
