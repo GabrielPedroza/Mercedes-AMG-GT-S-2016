@@ -5,6 +5,10 @@
 
 ## Available Scripts📜
 
+### npm i💡
+
+Please use this command if you are cloning this repository to download all necessary devDependencies.
+
 ### npm start👨🏻‍💻
 
 Runs the app in the development mode.
